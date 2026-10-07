@@ -1,0 +1,7 @@
+/.quarto/
+**/*.quarto_ipynb
+.DS_Store
+/docs/
+.venv/
+__pycache__/
+.brand-preview/
