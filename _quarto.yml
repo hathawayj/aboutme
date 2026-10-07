@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 website:
-  title: "Your Name"                      # TODO: your name
-  description: "Data science portfolio"   # TODO: one-line description
-  site-url: https://YOUR-USERNAME.github.io/YOUR-REPO   # TODO: needed for RSS and sharing
+  title: "J. Hathaway"
+  description: "Data science and data engineering portfolio"
+  site-url: https://hathawayj.github.io/aboutme
   navbar:
     left:
       - href: index.qmd
@@ -16,13 +16,13 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/YOUR-USERNAME   # TODO
+        href: https://github.com/hathawayj
       - icon: linkedin
-        href: https://www.linkedin.com/in/YOUR-PROFILE   # TODO
+        href: https://www.linkedin.com/in/hathawayj/
 
 format:
   html:
     theme:
-      - cosmo
+      - journal
       - brand
     css: styles.css

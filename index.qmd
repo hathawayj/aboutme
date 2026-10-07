@@ -1,6 +1,6 @@
 ---
-title: "Your Name"                 # TODO
-subtitle: "Data scientist who turns messy data into decisions"   # TODO: your headline
+title: "J. Hathaway"
+subtitle: "Data science and data engineering"
 page-layout: full
 title-block-banner: true
 listing:
@@ -14,8 +14,7 @@ listing:
   max-items: 3
 ---
 
-<!-- TODO: 2-3 sentences. Who are you, what do you do well, what are you looking for? -->
-I analyze data and communicate what it means. Below are projects that show how I work, with the problem, my approach, and the result.
+I build projects around customer segmentation, Python packages, and data science tooling. Below are projects that show how I work, with the problem, my approach, and the result.
 
 ## Featured projects
 

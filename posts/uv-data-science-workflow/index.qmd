@@ -1,0 +1,68 @@
+---
+title: "How uv fits into a data science workflow"
+description: "A practical mental model for using uv to manage Python environments, dependencies, and repeatable analysis." 
+author: "J. Hathaway"
+date: "2026-10-07"
+categories: [Python, workflow, reproducibility]
+draft: true
+---
+
+When a data science project grows beyond one notebook, the analysis is only part of the work. The project also needs a dependable way to install packages, run scripts, and recreate the same environment later.
+
+That is where `uv` fits. It is a Python package and project manager that can create an environment, resolve dependencies, maintain a lockfile, and run commands inside the project environment.
+
+## The problem it solves
+
+A project can work on one computer and fail on another because the two computers have different Python versions or package versions. A `requirements.txt` file helps describe dependencies, but it does not by itself explain the whole project workflow or guarantee that the environment is synchronized.
+
+For data science, this matters because small differences in packages can change how data is loaded, transformed, modeled, or plotted. Reproducibility is not only about saving the data and code; it is also about making the software environment repeatable.
+
+## A useful mental model
+
+I think of a `uv` project as three connected pieces:
+
+- `pyproject.toml` describes the project and its declared dependencies.
+- `uv.lock` records the exact resolved versions used by the project.
+- `.venv` is the local environment where those dependencies are installed.
+
+The lockfile is the bridge between a broad dependency request—such as “this project needs pandas”—and a concrete environment that can be recreated on another machine.
+
+## Where it appears in the workflow
+
+### 1. Start the project
+
+`uv init` creates the basic project structure. Project commands such as `uv run`, `uv sync`, and `uv lock` can then create the project environment and lockfile when they are needed.
+
+### 2. Add the tools for the analysis
+
+Instead of manually installing packages into whichever Python happens to be active, add them to the project:
+
+```bash
+uv add pandas scikit-learn matplotlib
+```
+
+This updates the project metadata, resolves compatible versions, and updates the environment.
+
+### 3. Run the analysis in the project environment
+
+`uv run` runs a command using the project environment:
+
+```bash
+uv run python analysis.py
+```
+
+That keeps the command connected to the dependencies declared for this project. It also checks that the lockfile and environment are up to date before running the command.
+
+### 4. Share and reproduce the work
+
+The `pyproject.toml` and `uv.lock` files belong in version control. A collaborator can use `uv sync` to install the locked dependencies, then use `uv run` to execute the analysis.
+
+For stricter automation, `uv run --locked` can require the lockfile to already be current instead of updating it. That is useful in continuous integration because an outdated lockfile should cause a clear failure rather than silently changing the environment.
+
+## The takeaway
+
+`uv` does not replace good data-science practice. It does make the project setup explicit: dependencies are declared, versions are locked, and commands run in a known environment.
+
+That separation is useful when moving from an exploratory notebook to a project someone else can run. The analysis still needs clear assumptions, documented data, and tested code—but `uv` helps make the software foundation repeatable.
+
+For more detail, see the official [`uv` project guide](https://docs.astral.sh/uv/guides/projects/) and documentation on [locking and syncing](https://docs.astral.sh/uv/concepts/projects/sync/).

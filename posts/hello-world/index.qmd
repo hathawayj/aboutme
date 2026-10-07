@@ -4,7 +4,7 @@ description: "A sample post. Replace it with your own writing."
 author: "Your Name"
 date: "2026-01-01"
 categories: [workflow]
-draft: true
+draft: false
 ---
 
 This is a placeholder (`draft: true` keeps it off the published site).

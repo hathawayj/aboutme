@@ -1,15 +1,20 @@
-# Change these to make the site yours. Colors and fonts apply everywhere.
+# Original newspaper-editorial palette: warm paper, ink, and one restrained accent.
 color:
   palette:
-    ink: "#1f2933"
-    accent: "#2563eb"
+    ink: "#171717"
+    accent: "#8b1e2d"
+    paper: "#f8f5ef"
+    muted: "#5f5a54"
   foreground: ink
+  background: paper
   primary: accent
 typography:
   fonts:
-    - family: Inter
+    - family: Source Sans 3
       source: google
-  base: Inter
+    - family: Source Serif 4
+      source: google
+  base: Source Sans 3
   headings:
-    family: Inter
+    family: Source Serif 4
     weight: 700

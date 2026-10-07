@@ -6,16 +6,20 @@ about:
   links:
     - icon: github
       text: GitHub
-      href: https://github.com/YOUR-USERNAME      # TODO
+      href: https://github.com/hathawayj
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/YOUR-PROFILE   # TODO
+      href: https://www.linkedin.com/in/hathawayj/
 ---
 
-<!-- TODO: write this yourself. A good About page answers four questions:
+<!-- A good About page answers four questions:
 1. What do you do and what are you studying?
 2. What kind of problems do you like?
 3. What have you built that you are proud of?
 4. How can someone reach you? -->
 
-Write about yourself here.
+I study data science and data engineering.
+
+I’m interested in customer segmentation, Python packages, and tools that make data science work more useful and repeatable.
+
+<!-- Add a short example of a project you are proud of, then keep the links above as the best ways to reach you. -->
